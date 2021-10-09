@@ -1,16 +1,27 @@
-function imgSlider(anything, color){
-	document.querySelector('.starbucks').src = anything;
-}
-
-function changeCircleColor(color){
-	const circle = document.querySelector('.circle')
-	circle.style.backgroundColor = color
-}
+const url = 'https://evoush-mock-api.herokuapp.com/products'
 
 
-function toggleMenu(){
-	const menuToggle = document.querySelector('.toggle')
-	const navigation = document.querySelector('.navigation')
-	menuToggle.classList.toggle('active')
-	navigation.classList.toggle('active')
-}
+allproduct(url)
+.then(res => {
+	const products = res.data.slice().reverse()
+	const firsts = products.slice(0, 5)
+	const seconds = products.slice(4, 9)
+	const thirds = products.slice(9, 13)
+
+	firsts.map(first => {
+		// console.log(first)
+		FirstProduct(first)
+	})
+
+	seconds.map(second => {
+		SecondProduct(second)
+	})
+
+	thirds.map(third => {
+		ThirdProduct(third)
+	})
+
+})
+.catch(err => {
+	console.log(err)
+})
