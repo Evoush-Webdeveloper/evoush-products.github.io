@@ -15,19 +15,34 @@ function ThirdProduct(third) {
   CreateElement("div", third, "third", "salmon");
 }
 
+function FourthProduct(fourth) {
+  CreateElement("div", fourth, "fourth", "coral");
+}
+
 function CreateElement(el, data, dom, color) {
-  // console.log(data);
+  console.log(data);
   const newEl = document.createElement("div");
-  newEl.className = "col-lg-2 col-xs-12 col-sm-12 container-product";
+  newEl.className = "project-card";
   newEl.innerHTML = `
-        <img src="${data.image.url}"/>
-        <br/>
-        <div class="middle" style="background-color:${color};">
-			      <div class="text">
-                <h4>${data.seo.title}</h4>
-                <p class="text-truncate">${data.seo.description}</p>
-            </div>
-		    </div>
+          <img
+            class="project-image"
+            src="${data.image.url}"
+            alt="Project One Image"
+          />
+          <h3>${data.seo.title}</h3>
+          <p class="subtext">
+            ${data.seo.title}
+          </p>
+          <hr />
+          <p class="subtext">
+            <a class="project-link" href="https://evoush.com/${data.categories[0].name}/${data.permalink}"
+              >View here</a
+            >
+          </p>
     `;
   document.getElementById(dom).appendChild(newEl);
+}
+
+function toggleButton() {
+  navList.classList.toggle("show");
 }
