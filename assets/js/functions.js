@@ -18,16 +18,16 @@ function ThirdProduct(third) {
 function CreateElement(el, data, dom, color) {
   // console.log(data);
   const newEl = document.createElement("div");
-  newEl.className = "container";
+  newEl.className = "col-lg-4 col-xs-12 col-sm-12 container-product";
   newEl.innerHTML = `
         <img src="${data.image.url}"/>
-        <br>
+        <br/>
         <div class="middle" style="background-color:${color};">
-			<div class="text">
+			      <div class="text">
                 <h4>${data.seo.title}</h4>
-                <p>${data.seo.description}</p>
+                <p class="text-truncate">${data.seo.description}</p>
             </div>
-		</div>
+		    </div>
     `;
   document.getElementById(dom).appendChild(newEl);
 }

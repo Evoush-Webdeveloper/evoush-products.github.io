@@ -7,8 +7,8 @@ allproduct(url)
     console.log(res.data.length);
     const products = res.data.slice().reverse();
     const firsts = products.slice(0, 5);
-    const seconds = products.slice(4, 9);
-    const thirds = products.slice(9, 13);
+    const seconds = products.slice(6, 11);
+    const thirds = products.slice(12, 14);
 
     if (res.data.length > 0) {
       loading.style.visibility = "visible";
