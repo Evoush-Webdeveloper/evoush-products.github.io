@@ -7,21 +7,6 @@ body {
   width: 50px;
 }
 
-.nav {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-}
-
-ul {
-  display: flex;
-}
-
-li {
-  list-style-type: none;
-  padding: 20px;
-}
-
 .hero-section {
 }
 
@@ -110,6 +95,10 @@ a {
 @media only screen and (max-width: 800px) {
   body {
     background-color: coral;
+  }
+  nav {
+    margin-top: -20rem;
+    margin-left: 3rem;
   }
   .container-product {
     width: 100%;
