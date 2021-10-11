@@ -18,7 +18,7 @@ function ThirdProduct(third) {
 function CreateElement(el, data, dom, color) {
   // console.log(data);
   const newEl = document.createElement("div");
-  newEl.className = "col-lg-4 col-xs-12 col-sm-12 container-product";
+  newEl.className = "col-lg-2 col-xs-12 col-sm-12 container-product";
   newEl.innerHTML = `
         <img src="${data.image.url}"/>
         <br/>

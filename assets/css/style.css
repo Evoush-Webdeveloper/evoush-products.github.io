@@ -10,14 +10,15 @@ body {
 .hero-section {
 }
 
-.row {
+#first,
+#second,
+#third .row {
   display: flex;
 }
 
 .container-product {
   width: 20%;
   position: relative;
-  /* margin-left:.5rem; */
   transition: transform 500ms;
   display: block;
 }
@@ -27,7 +28,7 @@ body {
   opacity: 1;
   height: auto;
   display: block;
-  /* transition: 0.5s ease-in-out; */
+  transition: 0.5s ease-in-out;
 }
 
 .row .container-product:focus,
@@ -43,7 +44,7 @@ body {
   top: 30%;
   left: 50%;
   width: 50%;
-  height: 90%;
+  height: 70%;
   transform: translate(-50%, -50%);
   text-align: center;
   font-family: "Nanum Gothic", sans-serif;
@@ -78,11 +79,6 @@ body {
 a {
   text-decoration: none;
   color: black;
-}
-
-.loading-img {
-  width: 300px;
-  margin-top: 5rem;
 }
 
 @media only screen and (max-width: 1500px) {
