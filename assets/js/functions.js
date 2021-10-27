@@ -35,7 +35,7 @@ function CreateElement(el, data, dom, color) {
           </p>
           <hr />
           <p class="subtext">
-            <a class="project-link" href="https://evoush.com/${data.categories[0].name}/${data.permalink}"
+            <a class="project-link" href="https://evoush.com/product/${data.permalink}"
               >View here</a
             >
           </p>

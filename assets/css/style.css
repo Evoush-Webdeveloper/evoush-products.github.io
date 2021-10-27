@@ -8,10 +8,20 @@ section {
 }
 
 .hero {
-  background-color: #1c1d25;
+  /* background-color: #1c1d25;
+   */
+  background: linear-gradient(to right, tomato, salmon);
   height: 100vh;
   color: white;
   font-size: 40px;
+}
+
+.brand-product {
+  transform: rotate(-10deg);
+  filter: drop-shadow(25px 15px 21px #212f3c);
+}
+.brand-product:hover {
+  transform: scale(1.5);
 }
 
 footer {
@@ -107,6 +117,10 @@ p {
   display: flex;
   justify-content: space-around;
   padding: 80px;
+}
+
+.sub-section .information {
+  text-align: justify;
 }
 
 .sub-section-alternative {
