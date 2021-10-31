@@ -1,16 +1,44 @@
-function imgSlider(anything, color){
-	document.querySelector('.starbucks').src = anything;
-}
+const url = "https://evoush-mock-api.herokuapp.com/products";
+const loading = document.getElementById("loading");
+loading.style.visibility = "hidden";
+const hamburgerButton = document.getElementById("hamburger");
+const navList = document.getElementById("nav-list");
 
-function changeCircleColor(color){
-	const circle = document.querySelector('.circle')
-	circle.style.backgroundColor = color
-}
+hamburgerButton.addEventListener("click", toggleButton);
 
+allproduct(url)
+  .then((res) => {
+    console.log(res.data.length);
+    const products = res.data.slice().reverse();
+    const firsts = products.slice(0, 3);
+    const seconds = products.slice(4, 7);
+    const thirds = products.slice(7, 10);
+    const fourths = products.slice(11, 14);
 
-function toggleMenu(){
-	const menuToggle = document.querySelector('.toggle')
-	const navigation = document.querySelector('.navigation')
-	menuToggle.classList.toggle('active')
-	navigation.classList.toggle('active')
-}
+    if (res.data.length > 0) {
+      loading.style.visibility = "visible";
+      setTimeout(function () {
+        loading.style.visibility = "hidden";
+        firsts.map((first) => {
+          FirstProduct(first);
+        });
+
+        seconds.map((second) => {
+          SecondProduct(second);
+        });
+
+        thirds.map((third) => {
+          ThirdProduct(third);
+        });
+
+        fourths.map((fourth) => {
+          FourthProduct(fourth);
+        });
+      }, 1500);
+    } else {
+      loading.style.visibility = "visible";
+    }
+  })
+  .catch((err) => {
+    console.log(err);
+  });
